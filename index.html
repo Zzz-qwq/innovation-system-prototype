@@ -415,28 +415,11 @@
   <!-- ==================== 前台：课程门户 ==================== -->
   <div class="view show" id="view-front" style="flex:1;">
 
-    <!-- 左侧：课程大纲 -->
-    <div class="sidebar">
-      <div class="menu-group">
-        <div class="menu-label">生产实习 · 课程大纲</div>
-        <div class="menu-item active" onclick="showModule('overview')">🏠 课程首页</div>
-        <div class="menu-item" onclick="showModule('m1')" id="menu-m1">📖 一、量潮是谁</div>
-        <div class="menu-item" onclick="showModule('m2')" id="menu-m2">🏢 二、业务与市场</div>
-        <div class="menu-item" onclick="showModule('m3')" id="menu-m3">🔧 三、工作方法论</div>
-        <div class="menu-item" onclick="showModule('m4')" id="menu-m4">💡 四、最新探索方向</div>
-        <div class="menu-item" onclick="showModule('m5')" id="menu-m5" style="color:#c88a3e;font-weight:600">📝 五、大作业：申报课题</div>
-      </div>
-      <div class="menu-group">
-        <div class="menu-label">辅助工具</div>
-        <div class="menu-item" onclick="showModule('consult')" id="menu-consult">💬 一对一咨询</div>
-        <div class="menu-item">👥 组队广场</div>
-      </div>
-    </div>
-
     <div class="main">
 
-      <!-- 横向步骤条（所有模块页面可见） -->
+      <!-- 横向步骤条（学习页面可见，首页隐藏） -->
       <div class="step-bar-h" id="stepBarH">
+        <a href="javascript:showModule('overview')" style="font-size:13px;color:var(--text-light);text-decoration:none;margin-right:12px;flex-shrink:0">← 首页</a>
         <div class="step-dot" onclick="showModule('m1')">
           <div class="step-node done" id="sn1">1</div>
           <span class="step-label done" id="sl1">量潮是谁</span>
@@ -461,6 +444,9 @@
           <div class="step-node" id="sn5">5</div>
           <span class="step-label" id="sl5">大作业</span>
         </div>
+        <span style="flex:1"></span>
+        <a href="javascript:showModule('consult')" style="font-size:12px;color:var(--text-light);text-decoration:none;flex-shrink:0">💬 咨询</a>
+        <span style="font-size:12px;color:var(--text-light);flex-shrink:0;margin-left:12px">👥 组队</span>
       </div>
 
       <!-- ===== 课程首页 ===== -->
@@ -533,6 +519,11 @@
 
         <div style="text-align:center;padding:24px 0;color:var(--text-light);font-size:13px">
           💡 完成全部学习并提交课题 → <strong style="color:#4a382e">进入正式录用评估</strong>。你付出的每一份努力，都是在为自己争取机会。
+        </div>
+
+        <div style="display:flex;gap:12px;justify-content:center;padding-bottom:24px">
+          <span onclick="showModule('consult')" style="cursor:pointer;font-size:12px;color:var(--text-light);padding:7px 16px;border:1px solid var(--border);border-radius:8px">💬 一对一咨询</span>
+          <span style="font-size:12px;color:var(--text-light);padding:7px 16px;border:1px solid var(--border);border-radius:8px">👥 组队广场</span>
         </div>
       </div>
 
@@ -856,17 +847,18 @@ function showModule(id) {
   document.querySelectorAll('#view-front .module-detail').forEach(m => m.classList.remove('show'));
   const target = document.getElementById('mod-' + id);
   if (target) target.classList.add('show');
-  // 左侧菜单高亮
-  document.querySelectorAll('#view-front .sidebar .menu-item').forEach(m => m.classList.remove('active'));
-  const menuItem = document.getElementById('menu-' + id);
-  if (menuItem) menuItem.classList.add('active');
-  else document.querySelector('#view-front .sidebar .menu-item').classList.add('active');
-  // 横向步骤条联动
-  updateStepBar(id);
+  // 步骤条：首页和咨询页隐藏，学习页显示
+  const stepBar = document.getElementById('stepBarH');
+  if (id === 'overview' || id === 'consult') {
+    stepBar.style.display = 'none';
+  } else {
+    stepBar.style.display = 'flex';
+    updateStepBar(id);
+  }
 }
 
 function updateStepBar(activeId) {
-  const stepMap = { overview:0, m1:1, m2:2, m3:3, m4:4, m5:5, consult:-1 };
+  const stepMap = { m1:1, m2:2, m3:3, m4:4, m5:5 };
   const cur = stepMap[activeId] || 0;
   for (let i = 1; i <= 5; i++) {
     const node = document.getElementById('sn' + i);
@@ -877,7 +869,7 @@ function updateStepBar(activeId) {
     label.className = 'step-label';
     if (i < cur) { node.classList.add('done'); label.classList.add('done'); }
     if (i === cur) { node.classList.add('current'); label.classList.add('current'); }
-    if (line) { line.className = 'step-line'; if (i <= cur) line.classList.add('done'); }
+    if (line) { line.className = 'step-line'; if (i < cur) line.classList.add('done'); }
   }
 }
 
