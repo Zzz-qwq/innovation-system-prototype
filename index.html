@@ -785,6 +785,12 @@ function closeFormPage() {
   document.getElementById('form-page').style.display = 'none';
 }
 
+// ====== 初始化 ======
+(function() {
+  var stepBar = document.getElementById('stepBarH');
+  if (stepBar) stepBar.style.display = 'none';
+})();
+
 // ====== 前台课程模块切换 ======
 function showModule(id) {
   // 切换内容区
