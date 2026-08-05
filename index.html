@@ -451,7 +451,7 @@
 
       <!-- ===== 课程首页 ===== -->
       <div class="module-detail show" id="mod-overview">
-        <div class="course-hero">
+        <div class="course-hero" style="max-width:640px;margin:0 auto">
           <div class="badge-course">🏭 生产实习</div>
           <h2>量潮课堂 · 实训基地</h2>
           <p class="hero-desc">
@@ -461,69 +461,16 @@
             <span>📚 5 个模块</span><span>⏱ 预计 2 周</span><span>👤 38 人在学</span>
           </div>
           <div class="progress-bar"><div class="fill" style="width:20%"></div></div>
-          <div style="font-size:11px;color:var(--text-light);margin-top:6px">
+          <div style="font-size:13px;color:var(--text-light);margin-top:8px">
             已完成 1/5 模块 · 完成全部模块后自动解锁大作业 · 提交课题即进入录用评估
           </div>
-          <div style="margin-top:16px">
-            <button class="btn btn-primary" onclick="showModule('m2')" style="font-size:16px;padding:12px 36px">
-              ▶ 继续学习 · 模块二：业务与市场
+          <div style="margin-top:28px;display:flex;gap:16px;justify-content:center">
+            <button class="btn btn-primary" onclick="showModule('m2')" style="font-size:16px;padding:14px 40px">
+              ▶ 继续学习
             </button>
+            <span onclick="showModule('consult')" style="cursor:pointer;font-size:14px;color:var(--text);padding:14px 24px;border:1px solid var(--border);border-radius:8px;background:#fff">💬 一对一咨询</span>
+            <span style="font-size:14px;color:var(--text-light);padding:14px 24px;border:1px solid var(--border);border-radius:8px;background:#fff">👥 组队广场</span>
           </div>
-        </div>
-
-        <!-- 热门课题 -->
-        <div class="card" style="margin-bottom:20px">
-          <h2>🔥 看看别人在做什么</h2>
-          <p class="subtitle">正在进行中的课题——也许能给你灵感</p>
-          <div class="relation-map">
-            <div class="project-node" onclick="alert('课题: AI辅助课程内容生产流水线\n负责人: 李明 (技术)\n状态: 执行中\n\n探索AI自动化课程资料整理与生产')">
-              <div class="title">AI课程生产流水线</div><div class="info">李明 · 技术 · 执行中</div>
-            </div>
-            <div class="project-node" onclick="alert('课题: 实训基地数据看板\n负责人: 王芳 (产品)\n状态: 审批中\n\n为实训基地提供可视化数据监控')">
-              <div class="title">实训数据看板</div><div class="info">王芳 · 产品 · 审批中</div>
-            </div>
-            <div class="project-node" onclick="alert('课题: 校企合作渠道拓展\n负责人: 陈强 (商务)\n状态: 执行中\n\n探索浙理工以外的高校合作机会')">
-              <div class="title">校企渠道拓展</div><div class="info">陈强 · 商务 · 执行中</div>
-            </div>
-          </div>
-        </div>
-
-        <h3 style="margin-bottom:14px;color:#4a382e">📋 学习路径</h3>
-        <div class="module-list">
-          <div class="module-card done" onclick="showModule('m1')">
-            <div class="mod-num">1</div>
-            <div class="mod-info"><div class="mod-title">量潮是谁</div><div class="mod-desc">公司背景、组织架构、核心业务线</div></div>
-            <div class="mod-status"><span class="check">✓</span> 已完成</div>
-          </div>
-          <div class="module-card" onclick="showModule('m2')">
-            <div class="mod-num">2</div>
-            <div class="mod-info"><div class="mod-title">业务与市场</div><div class="mod-desc">量潮课堂、量潮云的商业模式与市场定位</div></div>
-            <div class="mod-status">未开始</div>
-          </div>
-          <div class="module-card" onclick="showModule('m3')">
-            <div class="mod-num">3</div>
-            <div class="mod-info"><div class="mod-title">工作方法论</div><div class="mod-desc">产品原型→分解→成品的快速开发流程、知识工程方法</div></div>
-            <div class="mod-status">未开始</div>
-          </div>
-          <div class="module-card" onclick="showModule('m4')">
-            <div class="mod-num">4</div>
-            <div class="mod-info"><div class="mod-title">最新探索方向</div><div class="mod-desc">CEO 每周公开课、工作意图文档、规模化路线图</div></div>
-            <div class="mod-status">未开始</div>
-          </div>
-          <div class="module-card final" onclick="showModule('m5')">
-            <div class="mod-num">5</div>
-            <div class="mod-info"><div class="mod-title">大作业：申报你的课题</div><div class="mod-desc">基于前四个模块的理解，找到你的切入点，提交立项申请</div></div>
-            <div class="mod-status" style="font-size:11px">🔒 完成前 4 个模块后解锁</div>
-          </div>
-        </div>
-
-        <div style="text-align:center;padding:24px 0;color:var(--text-light);font-size:13px">
-          💡 完成全部学习并提交课题 → <strong style="color:#4a382e">进入正式录用评估</strong>。你付出的每一份努力，都是在为自己争取机会。
-        </div>
-
-        <div style="display:flex;gap:12px;justify-content:center;padding-bottom:24px">
-          <span onclick="showModule('consult')" style="cursor:pointer;font-size:12px;color:var(--text-light);padding:7px 16px;border:1px solid var(--border);border-radius:8px">💬 一对一咨询</span>
-          <span style="font-size:12px;color:var(--text-light);padding:7px 16px;border:1px solid var(--border);border-radius:8px">👥 组队广场</span>
         </div>
       </div>
 
@@ -536,10 +483,6 @@
           <div class="lesson-item" onclick="alert('课程内容将在平台上线后开放。\n\n届时将包含：组织架构图、各团队职责、协作模式介绍。')" style="cursor:pointer"><span class="dot done"></span> 1.2 组织架构与团队分工 <span style="color:var(--text-light);margin-left:auto;font-size:12px">阅读 8 min</span></div>
           <div class="lesson-item" onclick="alert('课程内容将在平台上线后开放。\n\n届时将包含：量潮云 vs 量潮课堂的定位差异、技术架构概览。')" style="cursor:pointer"><span class="dot"></span> 1.3 量潮云 + 量潮课堂：两大产品线 <span style="color:var(--text-light);margin-left:auto;font-size:12px">视频 15 min</span></div>
           <div class="lesson-item" onclick="alert('课程内容将在平台上线后开放。\n\n届时将包含：与浙理工的合作模式、产教融合的具体案例。')" style="cursor:pointer"><span class="dot"></span> 1.4 我们服务谁：浙理工合作案例 <span style="color:var(--text-light);margin-left:auto;font-size:12px">阅读 10 min</span></div>
-          <div style="margin-top:20px;display:flex;gap:12px">
-            <button class="btn btn-primary" onclick="showModule('m2')">→ 下一模块</button>
-            <button class="btn btn-ghost" onclick="showModule('overview')">← 返回首页</button>
-          </div>
         </div>
       </div>
 
@@ -580,11 +523,7 @@
           <div class="lesson-item" onclick="alert('课程内容将在平台上线后开放。\n\n届时将包含：CEO分享——量潮想要什么样的人才？我们考核的核心标准是什么？')" style="cursor:pointer"><span class="dot"></span> 4.1 CEO 公开课：我们想招什么样的人 <span style="color:var(--text-light);margin-left:auto;font-size:12px">视频 25 min</span></div>
           <div class="lesson-item" onclick="alert('课程内容将在平台上线后开放。\n\n届时将包含：公司当前的工作意图文档，理解每个方向的目标与挑战。')" style="cursor:pointer"><span class="dot"></span> 4.2 工作意图文档：公司级方向与 OKR <span style="color:var(--text-light);margin-left:auto;font-size:12px">阅读 15 min</span></div>
           <div class="lesson-item" onclick="alert('课程内容将在平台上线后开放。\n\n届时将包含：创新扩散模型、Stage-Gate、TRL成熟度——理解创新管理的基本理论框架。')" style="cursor:pointer"><span class="dot"></span> 4.3 创新管理理论简介：扩散模型 / Stage-Gate / TRL <span style="color:var(--text-light);margin-left:auto;font-size:12px">阅读 12 min</span></div>
-          <div class="lesson-item" onclick="alert('课程内容将在平台上线后开放。\n\n届时将包含：当前所有进行中的课题一览，了解其他学员在做什么，发现合作机会。')" style="cursor:pointer"><span class="dot"></span> 4.4 当前课题一览：发现你的切入点 <span style="color:var(--text-light);margin-left:auto;font-size:12px">浏览</span></div>
-          <div style="margin-top:20px;display:flex;gap:12px">
-            <button class="btn btn-primary" onclick="showModule('m5')">→ 进入大作业</button>
-            <button class="btn btn-ghost" onclick="showModule('overview')">← 返回首页</button>
-          </div>
+          <div class="lesson-item" onclick="alert('课程内容将在平台上线后开放。\n\n届时将包含：当前所有进行中的课题一览，了解其他学员在做什么，发现合作机会。')" style="cursor:pointer"><span class="dot"></span> 4.4 当前课题一览：发现你的切入点 <span class="ts">浏览</span></div>
         </div>
       </div>
 
