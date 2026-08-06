@@ -616,25 +616,25 @@ input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-
           <div class="nav-item" onclick="scrollToCard('topic-table')">📋 课题管理</div>
           <div class="nav-item" onclick="scrollToCard('approval-card')">🔍 审批中心</div>
           <div class="nav-item" onclick="scrollToCard('sc-card')">🎓 双创项目管理</div>
-          <div class="nav-item placeholder">📁 成果仓库</div>
-          <div class="nav-item placeholder">👥 成员管理</div>
-          <div class="nav-item placeholder">📖 课程管理</div>
-          <div class="nav-item placeholder">👤 学员管理</div>
+          <div class="nav-item" onclick="scrollToCard('archive-card')">📁 成果仓库</div>
+          <div class="nav-item" onclick="scrollToCard('member-card')">👥 成员管理</div>
+          <div class="nav-item" onclick="scrollToCard('course-mgmt-card')">📖 课程管理</div>
+          <div class="nav-item" onclick="scrollToCard('student-card')">👤 学员管理</div>
         </div>
       </div>
       <div class="nav-group">
         <div class="nav-label" onclick="toggleNav('form')"><span class="arr" id="arr-form">▼</span>表单配置</div>
         <div class="nav-kids" id="kids-form" style="max-height:300px">
-          <div class="nav-item sub" onclick="openFormPage()">📝 立项申请表</div>
-          <div class="nav-item sub placeholder">📋 阶段报告模板</div>
-          <div class="nav-item sub placeholder">✅ 验收评审表</div>
+          <div class="nav-item sub" onclick="scrollToCard('apply-card')">📝 立项申请表</div>
+          <div class="nav-item sub" onclick="scrollToCard('stage-report-card')">📋 阶段报告模板</div>
+          <div class="nav-item sub" onclick="scrollToCard('review-card')">✅ 验收评审表</div>
         </div>
       </div>
       <div class="nav-group">
         <div class="nav-label" onclick="toggleNav('rel')"><span class="arr" id="arr-rel">▼</span>关联系统</div>
         <div class="nav-kids" id="kids-rel" style="max-height:200px">
-          <div class="nav-item sub placeholder">📚 课程研发</div>
-          <div class="nav-item sub placeholder">💬 咨询/工单</div>
+          <div class="nav-item sub" onclick="scrollToCard('course-dev-card')">📚 课程研发</div>
+          <div class="nav-item sub" onclick="scrollToCard('consult-card')">💬 咨询/工单</div>
         </div>
       </div>
     </div>
@@ -654,7 +654,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-
       </div>
 
       <div class="section">
-        <div class="section-hd"><h3>课题管理</h3><span style="font-size:var(--fs-body2);color:var(--on-surface-variant)">所有课题的状态、负责人、阶段审批</span></div>
+        <div class="section-hd"><h3>课题管理</h3><span style="font-size:13px;color:var(--text-2)">所有课题的状态、负责人、阶段审批</span></div>
         <div class="section-body">
           <div class="card" id="topic-table" style="padding:0">
             <table class="datatable">
@@ -671,7 +671,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-
       </div>
 
       <div class="section">
-        <div class="section-hd"><h3>审批中心</h3><span style="font-size:var(--fs-body2);color:var(--on-surface-variant)">申报人：王芳 · 产品 · 2026-08-04</span></div>
+        <div class="section-hd"><h3>审批中心</h3><span style="font-size:13px;color:var(--text-2)">申报人：王芳 · 产品 · 2026-08-04</span></div>
         <div class="section-body">
           <div class="card" id="approval-card">
             <div class="twocol">
@@ -686,7 +686,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-
               <div class="side">
                 <div class="form-group"><label>审批意见</label><textarea placeholder="填写审批意见..."></textarea></div>
                 <div class="form-group"><label>资源支持等级</label><select><option>基础级</option><option>支持级</option><option>重点级</option></select></div>
-                <div style="display:flex;gap:var(--sp-2)"><button class="btn btn-filled btn-sm">✓ 通过</button><button class="btn btn-text btn-sm" style="color:var(--error)">✗ 驳回</button></div>
+                <div style="display:flex;gap:8px"><button class="btn btn-filled btn-sm">✓ 通过</button><button class="btn btn-text btn-sm" style="color:#F25F5C">✗ 驳回</button></div>
               </div>
             </div>
           </div>
@@ -699,7 +699,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-
           <div class="card" id="sc-card">
             <p class="subtitle" style="margin-bottom:0">LMS 核心子系统——学员自主选题、自由组队，2 周内做一个 demo sale 给总部。我们不给你出题，你自己给自己出题。同一套评分标准，不同分数线——课堂模式 60 分及格，招聘模式 90 分录用。</p>
             <hr class="divider">
-            <p style="font-size:var(--fs-body2);color:var(--on-surface-variant);margin-bottom:0">从"找到盲区"到"sale 给总部"——一个微型创业项目的完整生命周期</p>
+            <p style="font-size:13px;color:var(--text-2);margin-bottom:0">从"找到盲区"到"sale 给总部"——一个微型创业项目的完整生命周期</p>
             <div class="pipeline">
               <div class="stage"><div class="icon">💡</div><div class="name">发现盲区</div><div class="hint">学员基于课程上下文<br>找到公司可能感兴趣<br>但还没做的方向</div></div>
               <div class="stage"><div class="icon">📝</div><div class="name">提交立项</div><div class="hint">填写立项申请表<br>说清楚：发现了什么<br>打算怎么做</div></div>
@@ -707,6 +707,183 @@ input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-
               <div class="stage"><div class="icon">🚀</div><div class="name">2 周执行</div><div class="hint">自由组队或个人<br>做出最小可行 demo<br>过程中自我驱动</div></div>
               <div class="stage"><div class="icon">🎤</div><div class="name">Sale 给总部</div><div class="hint">向管理层展示成果<br>同一套标准打分<br>60 分及格/90 分录用</div></div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 成果仓库 -->
+      <div class="section">
+        <div class="section-hd"><h3>成果仓库</h3><span style="font-size:13px;color:var(--text-3)">已验收项目的归档与检索</span></div>
+        <div class="section-body">
+          <div class="card" id="archive-card">
+            <div style="display:flex;gap:16px;flex-wrap:wrap">
+              <div style="flex:1;min-width:200px;padding:16px;background:#f8fafc;border-radius:8px;border:1px solid var(--line-light)">
+                <div style="font-size:24px;margin-bottom:8px">📊</div>
+                <div style="font-weight:600;font-size:14px;margin-bottom:4px">实训基地数据看板</div>
+                <div style="font-size:12px;color:var(--text-3);margin-bottom:8px">王芳 · 2026-07-15 验收</div>
+                <span class="badge done">已验收</span>
+              </div>
+              <div style="flex:1;min-width:200px;padding:16px;background:#f8fafc;border-radius:8px;border:1px solid var(--line-light)">
+                <div style="font-size:24px;margin-bottom:8px">📝</div>
+                <div style="font-weight:600;font-size:14px;margin-bottom:4px">课程内容"左移"标准</div>
+                <div style="font-size:12px;color:var(--text-3);margin-bottom:8px">赵子奕 · 2026-07-28 验收</div>
+                <span class="badge done">已验收</span>
+              </div>
+              <div style="flex:1;min-width:200px;padding:16px;background:#f8fafc;border-radius:8px;border:1px solid var(--line-light)">
+                <div style="font-size:24px;margin-bottom:8px">🤖</div>
+                <div style="font-weight:600;font-size:14px;margin-bottom:4px">AI 面试模拟器原型</div>
+                <div style="font-size:12px;color:var(--text-3);margin-bottom:8px">张伟 · 2026-06-20 验收</div>
+                <span class="badge done">已验收</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 成员管理 -->
+      <div class="section">
+        <div class="section-hd"><h3>成员管理</h3><span style="font-size:13px;color:var(--text-3)">双创项目成员与角色分配</span></div>
+        <div class="section-body">
+          <div class="card" id="member-card" style="padding:0">
+            <table class="datatable">
+              <thead><tr><th>姓名</th><th>角色</th><th>所属项目</th><th>加入时间</th><th>状态</th></tr></thead>
+              <tbody>
+                <tr><td><strong>李明</strong></td><td>技术负责人</td><td>AI 课程内容生产流水线</td><td>2026-08-03</td><td><span class="badge active-status">活跃</span></td></tr>
+                <tr><td><strong>王芳</strong></td><td>产品负责人</td><td>实训基地数据看板</td><td>2026-08-04</td><td><span class="badge active-status">活跃</span></td></tr>
+                <tr><td><strong>陈强</strong></td><td>商务拓展</td><td>校企渠道拓展方案</td><td>2026-08-02</td><td><span class="badge active-status">活跃</span></td></tr>
+                <tr><td><strong>赵子奕</strong></td><td>产品经理</td><td>课程内容"左移"标准</td><td>2026-07-20</td><td><span class="badge done">已结项</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课程管理 -->
+      <div class="section">
+        <div class="section-hd"><h3>课程管理</h3><span style="font-size:13px;color:var(--text-3)">课程配置、阶段编排与课时管理</span></div>
+        <div class="section-body">
+          <div class="card" id="course-mgmt-card" style="padding:0">
+            <table class="datatable">
+              <thead><tr><th>课程名称</th><th>阶段数</th><th>课时数</th><th>难度</th><th>状态</th><th>操作</th></tr></thead>
+              <tbody>
+                <tr><td><strong>📝 知识工作</strong></td><td>4</td><td>12</td><td><span class="badge beginner">入门</span></td><td><span class="badge active-status">已发布</span></td><td><button class="btn btn-text btn-sm">编辑</button></td></tr>
+                <tr><td><strong>💻 氛围编程</strong></td><td>4</td><td>12</td><td><span class="badge beginner">入门</span></td><td><span class="badge active-status">已发布</span></td><td><button class="btn btn-text btn-sm">编辑</button></td></tr>
+                <tr><td><strong>📊 大数据导论</strong></td><td>4</td><td>12</td><td><span class="badge intermediate">进阶</span></td><td><span class="badge review">待审核</span></td><td><button class="btn btn-text btn-sm">编辑</button></td></tr>
+                <tr><td><strong>⚙️ 数据工程</strong></td><td>4</td><td>12</td><td><span class="badge advanced">实战</span></td><td><span class="badge draft">草稿</span></td><td><button class="btn btn-text btn-sm">编辑</button></td></tr>
+                <tr><td><strong>🏭 生产实习</strong></td><td>5</td><td>20</td><td><span class="badge capstone">微型创业</span></td><td><span class="badge active-status">已发布</span></td><td><button class="btn btn-text btn-sm">编辑</button></td></tr>
+              </tbody>
+            </table>
+            <div style="padding:14px 16px;border-top:1px solid var(--line-light)"><button class="btn btn-outlined btn-sm">+ 新建课程</button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 学员管理 -->
+      <div class="section">
+        <div class="section-hd"><h3>学员管理</h3><span style="font-size:13px;color:var(--text-3)">在读学员与学习进度</span></div>
+        <div class="section-body">
+          <div class="card" id="student-card" style="padding:0">
+            <table class="datatable">
+              <thead><tr><th>学员</th><th>当前课程</th><th>进度</th><th>最近活跃</th><th>状态</th></tr></thead>
+              <tbody>
+                <tr><td><strong>张同学</strong></td><td>生产实习</td><td>3/5 模块</td><td>2026-08-06</td><td><span class="badge active-status">在读</span></td></tr>
+                <tr><td><strong>李同学</strong></td><td>知识工作</td><td>2/4 阶段</td><td>2026-08-05</td><td><span class="badge active-status">在读</span></td></tr>
+                <tr><td><strong>王同学</strong></td><td>氛围编程</td><td>4/4 阶段</td><td>2026-08-04</td><td><span class="badge review">待晋升</span></td></tr>
+                <tr><td><strong>陈同学</strong></td><td>大数据导论</td><td>1/4 阶段</td><td>2026-08-06</td><td><span class="badge active-status">在读</span></td></tr>
+                <tr><td><strong>刘同学</strong></td><td>生产实习</td><td>5/5 模块</td><td>2026-08-03</td><td><span class="badge done">已完成</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- 立项申请表 -->
+      <div class="section">
+        <div class="section-hd"><h3>立项申请表</h3><span style="font-size:13px;color:var(--text-3)">双创项目申报表单——学员自主选题、自由组队</span></div>
+        <div class="section-body">
+          <div class="card" id="apply-card">
+            <div class="form-group"><label>项目名称</label><input type="text" placeholder="给你的微型创业项目起一个名字"></div>
+            <div class="form-group"><label>你发现了公司的什么盲区或机会？</label><textarea placeholder="基于课程上下文，描述你发现的公司可能感兴趣但还没做的方向..."></textarea></div>
+            <div class="form-group"><label>你的 Demo 打算怎么做？</label><textarea placeholder="2 周内你能做出什么来 sale 给总部？..."></textarea></div>
+            <div class="form-row">
+              <div class="form-group"><label>方向类型</label><select><option>技术探索</option><option>产品构建</option><option>商务拓展</option><option>组织创新</option></select></div>
+              <div class="form-group"><label>组队方式</label><select><option>个人独立</option><option>已找好搭档</option><option>希望在组队广场招募</option></select></div>
+            </div>
+            <div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-filled btn-sm">✓ 提交申报</button><button class="btn btn-text btn-sm">保存草稿</button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 阶段报告模板 -->
+      <div class="section">
+        <div class="section-hd"><h3>阶段报告模板</h3><span style="font-size:13px;color:var(--text-3)">双创项目执行过程中的阶段汇报表单</span></div>
+        <div class="section-body">
+          <div class="card" id="stage-report-card">
+            <div class="form-group"><label>报告阶段</label><select><option>阶段一：立项启动</option><option>阶段二：中期检查</option><option>阶段三：成果验收</option></select></div>
+            <div class="form-group"><label>本周完成了什么？</label><textarea placeholder="描述本周完成的具体工作..."></textarea></div>
+            <div class="form-group"><label>遇到了什么困难？</label><textarea placeholder="描述遇到的问题和尝试的解决方案..."></textarea></div>
+            <div class="form-group"><label>下周计划</label><textarea placeholder="下周的工作计划..."></textarea></div>
+            <div class="form-row">
+              <div class="form-group"><label>是否需要帮助</label><select><option>无需帮助</option><option>需要导师指导</option><option>需要资源支持</option></select></div>
+              <div class="form-group"><label>整体进度评估</label><select><option>超前</option><option>正常</option><option>滞后</option></select></div>
+            </div>
+            <div style="display:flex;gap:8px"><button class="btn btn-filled btn-sm">✓ 提交报告</button><button class="btn btn-text btn-sm">保存草稿</button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 验收评审表 -->
+      <div class="section">
+        <div class="section-hd"><h3>验收评审表</h3><span style="font-size:13px;color:var(--text-3)">双创项目结项验收与评分</span></div>
+        <div class="section-body">
+          <div class="card" id="review-card">
+            <div class="form-group"><label>项目名称</label><input type="text" placeholder="待验收项目名称"></div>
+            <div class="form-row">
+              <div class="form-group"><label>完成度评分</label><select><option>1-5 分</option></select></div>
+              <div class="form-group"><label>创新性评分</label><select><option>1-5 分</option></select></div>
+              <div class="form-group"><label>可复用性评分</label><select><option>1-5 分</option></select></div>
+            </div>
+            <div class="form-group"><label>评审意见</label><textarea placeholder="对项目的整体评价和改进建议..."></textarea></div>
+            <div class="form-group"><label>验收结论</label><select><option>✅ 通过验收 · 归档至成果仓库</option><option>⚠️ 有条件通过 · 需补充材料</option><option>❌ 不通过 · 退回修改</option></select></div>
+            <div style="display:flex;gap:8px"><button class="btn btn-filled btn-sm">✓ 提交评审</button><button class="btn btn-text btn-sm">保存草稿</button></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 课程研发 -->
+      <div class="section">
+        <div class="section-hd"><h3>课程研发</h3><span style="font-size:13px;color:var(--text-3)">内容逻辑、学习路径整理——核心特点：内容"左移"</span></div>
+        <div class="section-body">
+          <div class="card" id="course-dev-card">
+            <div style="display:flex;gap:20px">
+              <div style="flex:1;padding:16px;background:#f8fafc;border-radius:8px;border:1px solid var(--line-light)">
+                <div style="font-weight:600;font-size:14px;margin-bottom:8px">📐 内容"左移"标准</div>
+                <div style="font-size:13px;color:var(--text-2);line-height:1.7">当前实践课标准 = 之前生产实习标准<br>当前理论课标准 = 之前实践课标准<br>课程内容不断前置和降级，保持业界领先</div>
+                <span class="badge active-status" style="margin-top:8px">进行中</span>
+              </div>
+              <div style="flex:1;padding:16px;background:#f8fafc;border-radius:8px;border:1px solid var(--line-light)">
+                <div style="font-weight:600;font-size:14px;margin-bottom:8px">📖 知识工程教程</div>
+                <div style="font-size:13px;color:var(--text-2);line-height:1.7">《欢迎入职浪潮科技》Baby 版<br>面向非技术岗位的 Web Coding 入门<br>工作日志 + 复盘方法论标准模板</div>
+                <span class="badge review" style="margin-top:8px">待审核</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 咨询/工单 -->
+      <div class="section">
+        <div class="section-hd"><h3>咨询/工单</h3><span style="font-size:13px;color:var(--text-3)">学员咨询与工单处理</span></div>
+        <div class="section-body">
+          <div class="card" id="consult-card" style="padding:0">
+            <table class="datatable">
+              <thead><tr><th>主题</th><th>提交人</th><th>类型</th><th>紧急程度</th><th>时间</th><th>状态</th></tr></thead>
+              <tbody>
+                <tr><td><strong>如何选择课题方向？</strong></td><td>张同学</td><td>职业发展</td><td>一般</td><td>08-06</td><td><span class="badge review">待处理</span></td></tr>
+                <tr><td><strong>Python 环境安装报错</strong></td><td>李同学</td><td>技术问题</td><td>较急</td><td>08-05</td><td><span class="badge active-status">处理中</span></td></tr>
+                <tr><td><strong>课程内容疑问</strong></td><td>王同学</td><td>课程内容</td><td>一般</td><td>08-04</td><td><span class="badge done">已关闭</span></td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -719,20 +896,22 @@ input:focus-visible, textarea:focus-visible, select:focus-visible, button:focus-
 <!-- ============================== 立项申请表 · 问卷预览页 ============================== -->
 <div class="form-page" id="form-page" style="display:none;">
   <header class="form-header">
-    <div style="font-size:var(--fs-body2);font-weight:600;color:var(--on-surface);display:flex;align-items:center;gap:var(--sp-2)"><span style="color:var(--primary);font-size:16px">🟧</span> 量潮课堂生产实习立项申请表</div>
-    <div style="margin-left:auto;display:flex;gap:var(--sp-2)"><button class="btn btn-text btn-sm">◷ 结果分析</button><button class="btn btn-filled btn-sm">➤ 发布</button></div>
+    <div style="font-size:13px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px"><span style="color:var(--brand);font-size:16px">🟧</span> 量潮课堂生产实习立项申请表</div>
+    <div style="margin-left:auto;display:flex;gap:8px"><button class="btn btn-text btn-sm">◷ 结果分析</button><button class="btn btn-filled btn-sm">➤ 发布</button></div>
   </header>
   <div class="form-body">
     <div class="form-back" onclick="closeFormPage()">← 返回后台</div>
     <div class="form-left">
-      <h1>量潮课堂生产实习立项申请表</h1><p class="desc">请输入描述</p>
-      <div style="margin-bottom:var(--sp-4)"><div style="font-size:17px;color:var(--on-surface-variant);margin-bottom:2px">1 → 文本</div><div style="font-size:var(--fs-body2);color:var(--on-surface-variant);margin-bottom:6px">问题描述</div><textarea style="width:500px;height:72px;border:1.5px solid var(--outline);border-radius:var(--radius-sm);padding:10px 14px;font-size:var(--fs-body1);font-family:inherit;resize:vertical">待填写者输入</textarea></div>
-      <div style="margin-bottom:var(--sp-4)"><div style="font-size:17px;color:var(--on-surface-variant)">2 → 单选</div><div style="font-size:var(--fs-body2);color:var(--on-surface-variant);margin-bottom:6px">问题描述</div><div style="width:500px;height:40px;border:1.5px solid var(--outline);border-radius:var(--radius-sm);margin-bottom:6px;display:flex;align-items:center;padding:0 16px;background:var(--surface-container)"><input type="radio" style="accent-color:var(--primary)"><span style="margin-left:10px;color:var(--on-surface-variant);font-size:var(--fs-body2)">请输入选项</span></div><div style="width:500px;height:40px;border:1.5px solid var(--outline);border-radius:var(--radius-sm);margin-bottom:6px;display:flex;align-items:center;padding:0 16px;background:var(--surface-container)"><input type="radio"><span style="margin-left:10px;color:var(--on-surface-variant);font-size:var(--fs-body2)">请输入选项</span></div></div>
-      <button class="btn btn-filled" style="width:150px;margin-top:var(--sp-4)">✓ 提交</button>
+      <h1>量潮课堂生产实习立项申请表</h1><p class="fdesc">请输入描述</p>
+      <div style="margin-bottom:16px"><div style="font-size:17px;color:var(--text-2);margin-bottom:2px">1 → 文本</div><div style="font-size:13px;color:var(--text-2);margin-bottom:6px">问题描述</div><textarea style="width:500px;height:72px;border:1.5px solid var(--line);border-radius:8px;padding:10px 14px;font-size:14px;font-family:inherit;resize:vertical;background:var(--surface)">待填写者输入</textarea></div>
+      <div style="margin-bottom:16px"><div style="font-size:17px;color:var(--text-2)">2 → 单选</div><div style="font-size:13px;color:var(--text-2);margin-bottom:6px">问题描述</div><div style="width:500px;height:40px;border:1.5px solid var(--line);border-radius:8px;margin-bottom:6px;display:flex;align-items:center;padding:0 16px;background:var(--surface)"><input type="radio" style="accent-color:var(--brand)"><span style="margin-left:10px;color:var(--text-2);font-size:13px">请输入选项</span></div><div style="width:500px;height:40px;border:1.5px solid var(--line);border-radius:8px;margin-bottom:6px;display:flex;align-items:center;padding:0 16px;background:var(--surface)"><input type="radio"><span style="margin-left:10px;color:var(--text-2);font-size:13px">请输入选项</span></div></div>
+      <button class="btn btn-filled" style="width:150px;margin-top:16px">✓ 提交</button>
     </div>
     <div class="form-right">
-      <div class="deco-ring r1"></div><div class="deco-ring r2"></div><div class="deco-ring r3"></div>
-      <div class="deco-star">★</div>
+      <div style="position:absolute;border-radius:50%;width:420px;height:420px;right:40px;top:60px;background:var(--brand-soft);opacity:.5"></div>
+      <div style="position:absolute;border-radius:50%;width:315px;height:315px;right:92px;top:112px;background:var(--brand);opacity:.3"></div>
+      <div style="position:absolute;border-radius:50%;width:210px;height:210px;right:145px;top:165px;background:var(--surface)"></div>
+      <div style="position:absolute;right:227px;top:247px;font-size:56px;color:#FFA726">★</div>
     </div>
   </div>
 </div>
